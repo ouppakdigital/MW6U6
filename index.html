@@ -922,6 +922,8 @@
         </div>
       `;
 
+      typesetNow();
+
       if (percent >= 70) {
         setTimeout(triggerConfetti, 200);
         setTimeout(triggerConfetti, 520);
@@ -933,6 +935,7 @@
       reviewToggleBtn.addEventListener('click', () => {
         reviewOpen = !reviewOpen;
         reviewList.classList.toggle('open', reviewOpen);
+        if (reviewOpen) typesetNow();
         reviewToggleBtn.textContent = reviewOpen ? 'Hide Answers' : 'Review Answers';
       });
     }
